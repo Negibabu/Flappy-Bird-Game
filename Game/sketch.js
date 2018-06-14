@@ -5,19 +5,17 @@ var i=0;
 var highscore=0;
 var distance=0;
 
-
 function setup() {
   // put setup code here
-  createCanvas(600,500);
+  createCanvas(window.innerWidth,window.innerHeight);
   bird = new Bird();
-  obstacle.push(new Obstacle());
 
 }
 
 function draw() {
   // put drawing code here
   
-  background(0,200,0);
+  background(115,224,255);
   strokeWeight(0);
 
   if(f==0)
@@ -32,14 +30,15 @@ function draw() {
 
   	textSize(70);
   	textStyle(NORMAL);
-  	text('JayDee Bird', 100, 100);
+  	text('JayDee Bird', 450, 100);
   	textSize(20);
   	textStyle(NORMAL);
-  	text('HIGH SCORE : ', 200, 250);
-  	text(highscore,350,250);
+  	text('HIGH SCORE : ', 550, 200);
+    text('Tap SPACE to keep JayDee moving\n *******Hit the bricks;You Die!!*******', 480, height/2);
+  	text(highscore,700,200);
   	textSize(50);
   	textStyle(ITALIC);
-  	text('Press SPACE to start', 50, 400);
+  	text('Press SPACE to start', 400, height-50);
   }
 
   if(f==1)
@@ -95,6 +94,12 @@ function draw() {
   }
 
 }
+
+function touchStarted() {
+  f=1;
+  bird.up();
+}
+
 
 function keyPressed() {
   if (key == ' ') {

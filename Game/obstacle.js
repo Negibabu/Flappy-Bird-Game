@@ -8,7 +8,7 @@ function Obstacle()
 	
 	this.show = function()
 	{
-		fill(255,0,0);
+		fill(255,116,34);
 		rect(this.x,0,this.width1,this.o1_y);
 		rect(this.x,this.o2_y, this.width1,height);
 		
